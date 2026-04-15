@@ -2,38 +2,51 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Desarrollo Web</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Areandina - Control de Citas</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <h1>Clínica Areandina</h1>
-
+    <h1>Clínica Areandina: Registro de Citas</h1>
+    
     <div class="formulario">
-        <h3>REGISTRO DE CITAS</h3>
+        <h3>Nueva Cita</h3>
         
-        <label>ID Paciente:</label>
-        <input type="text" id="id" placeholder="CC / TI">
-
         <label>Nombre del Paciente:</label>
         <input type="text" id="nombre" placeholder="Nombre completo">
 
         <label>Edad:</label>
-        <input type="number" id="edad" placeholder="Años">
+        <input type="text" id="edad" placeholder="Ej: 25">
 
-        <label>Especialista:</label>
-        <select id="medico">
-            <option value="Dr. Pájaro (Internista)">Dr. Pájaro (Internista)</option>
-            <option value="Dra. Flores (Ginecóloga)">Dra. Flores (Ginecóloga)</option>
-            <option value="Dr. Beltrán (Medicina General)">Dr. Beltrán (Medicina General)</option>
-            <option value="Dra. De Avila (Cardióloga)">Dra. De Avila (Cardióloga)</option>
+        <label>Seleccionar Especialista:</label>
+        <select id="medicoSelect">
+            <option value="" disabled selected>-- Elija un médico --</option>
+            <option value="MED-001">Dr. Pérez - Medicina General</option>
+            <option value="ODO-002">Dra. Ruiz - Odontología</option>
+            <option value="INT-003">Dr. Torres - Internista</option>
+            <option value="GIN-004">Dra. Gómez - Ginecología</option>
         </select>
 
-        <button id="btnGuardar">Guardar y Agendar</button>
+        <button onclick="registrar()">Guardar</button>
     </div>
 
-    <div id="lista-pacientes" class="tabla-pacientes">
-        </div>
+    <div class="contenedor-tabla">
+        <h2>Listado de Citas</h2>
+        <table id="tablaPacientes">
+            <thead>
+                <tr>
+                    <th>ID Médico</th>
+                    <th>Médico</th>
+                    <th>Paciente</th>
+                    <th>Edad</th>
+                    <th>Fecha</th>
+                    <th>Recomendaciones</th>
+                </tr>
+            </thead>
+            <tbody id="cuerpoTabla">
+                </tbody>
+        </table>
+    </div>
 
     <script src="script.js"></script>
 </body>

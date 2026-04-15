@@ -1,64 +1,85 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    margin: 20px;
 }
 
-h1 {
+h1, h2 {
     text-align: center;
+    color: #1a5276;
 }
 
-/* Estilo exacto al de la foto del profesor */
 .formulario {
-    background-color: blanchedalmond; /* Color de tu captura */
-    padding: 20px;
-    border-radius: 8px;
-    width: 350px;
-    margin: 0 auto 20px;
+    background-color: blanchedalmond;
+    width: 400px;
+    margin: 0 auto 40px;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 5px;
+    gap: 10px;
 }
 
-.formulario input, .formulario select {
-    width: 100%;
-    max-width: 300px;
-    padding: 8px;
+.formulario label {
+    font-weight: bold;
+    color: #34495e;
+}
+
+input, select {
+    padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-bottom: 10px;
+    border-radius: 6px;
+    font-size: 14px;
 }
 
 button {
-    background-color: goldenrod; /* Color de tu captura */
+    background-color: #28b463;
     color: white;
-    border: none;
-    border-radius: 5px;
     padding: 12px;
+    border: none;
+    border-radius: 6px;
     cursor: pointer;
+    font-size: 16px;
     font-weight: bold;
-    width: 100%;
-    max-width: 300px;
+    margin-top: 10px;
+    transition: 0.3s;
 }
 
 button:hover {
-    background-color: darkgoldenrod;
+    background-color: #239b56;
 }
 
-/* Estilo para los resultados */
-.tarjeta-atencion {
-    border: 1px solid #ddd;
-    padding: 15px;
-    margin-top: 10px;
-    border-radius: 8px;
-    background-color: #fff;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+.contenedor-tabla {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
-.zona-medica {
-    background-color: #f2f2f2;
-    padding: 10px;
-    margin-top: 10px;
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+}
+
+th {
+    background-color: #1a5276;
+    color: white;
+}
+
+.id-badge {
+    background-color: #5d6d7e;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
 }
