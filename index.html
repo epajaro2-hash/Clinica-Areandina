@@ -3,51 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clínica Areandina - Control de Citas</title>
+    <title>Clínica Areandina - Panel Médico</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <h1>Clínica Areandina: Registro de Citas</h1>
+<body class="bg-light">
+
+<div class="container py-5">
+    <h1 class="text-center mb-4 text-primary fw-bold">Clínica Areandina</h1>
     
-    <div class="formulario">
-        <h3>Nueva Cita</h3>
-        
-        <label>Nombre del Paciente:</label>
-        <input type="text" id="nombre" placeholder="Nombre completo">
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+            <div class="card shadow border-0 p-4" style="background-color: blanchedalmond;">
+                <h4 class="text-center mb-4 text-secondary">Registro de Cita</h4>
+                
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Nombre del Paciente:</label>
+                    <input type="text" id="nombre" class="form-control" placeholder="Nombre completo">
+                </div>
 
-        <label>Edad:</label>
-        <input type="text" id="edad" placeholder="Ej: 25">
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Edad:</label>
+                    <input type="text" id="edad" class="form-control" placeholder="Ej: 25">
+                </div>
 
-        <label>Seleccionar Especialista:</label>
-        <select id="medicoSelect">
-            <option value="" disabled selected>-- Elija un médico --</option>
-            <option value="MED-001">Dr. Pérez - Medicina General</option>
-            <option value="ODO-002">Dra. Ruiz - Odontología</option>
-            <option value="INT-003">Dr. Torres - Internista</option>
-            <option value="GIN-004">Dra. Gómez - Ginecología</option>
-        </select>
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Especialista:</label>
+                    <select id="medicoSelect" class="form-select">
+                        <option value="" disabled selected>-- Elija un médico --</option>
+                        <option value="MED-001">Dr. Pérez - Medicina General</option>
+                        <option value="ODO-002">Dra. Ruiz - Odontología</option>
+                        <option value="INT-003">Dr. Torres - Internista</option>
+                        <option value="GIN-004">Dra. Gómez - Ginecología</option>
+                    </select>
+                </div>
 
-        <button onclick="registrar()">Guardar</button>
+                <button onclick="registrar()" class="btn btn-primary w-100 fw-bold mt-2 shadow-sm">Guardar Cita</button>
+            </div>
+        </div>
     </div>
 
-    <div class="contenedor-tabla">
-        <h2>Listado de Citas</h2>
-        <table id="tablaPacientes">
-            <thead>
-                <tr>
-                    <th>ID Médico</th>
-                    <th>Médico</th>
-                    <th>Paciente</th>
-                    <th>Edad</th>
-                    <th>Fecha</th>
-                    <th>Recomendaciones</th>
-                </tr>
-            </thead>
-            <tbody id="cuerpoTabla">
-                </tbody>
-        </table>
+    <div class="mt-5">
+        <h3 class="text-center mb-3">Historial de Registros</h3>
+        <div class="table-responsive bg-white p-3 rounded shadow-sm">
+            <table class="table table-hover align-middle">
+                <thead class="table-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Médico / Especialidad</th>
+                        <th>Paciente</th>
+                        <th>Edad</th>
+                        <th>Fecha Registro</th>
+                        <th>Recomendación</th>
+                    </tr>
+                </thead>
+                <tbody id="cuerpoTabla"></tbody>
+            </table>
+        </div>
     </div>
+</div>
 
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
