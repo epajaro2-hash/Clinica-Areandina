@@ -3,66 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clínica Areandina - Panel Médico</title>
+    <title>Clínica Areandina - Frontend</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-light">
 
-<div class="container py-5">
-    <h1 class="text-center mb-4 text-primary fw-bold">Clínica Areandina</h1>
-    
-    <div class="row justify-content-center">
-        <div class="col-md-5">
-            <div class="card shadow border-0 p-4" style="background-color: blanchedalmond;">
-                <h4 class="text-center mb-4 text-secondary">Registro de Cita</h4>
-                
-                <div class="mb-3">
-                    <label class="form-label fw-bold">Nombre del Paciente:</label>
-                    <input type="text" id="nombre" class="form-control" placeholder="Nombre completo">
-                </div>
+    <header class="bg-primary text-white text-center py-3 shadow-sm">
+    <h1 class="h3 fw-bold m-0">Clínica Areandina</h1>
+</header>
 
-                <div class="mb-3">
-                    <label class="form-label fw-bold">Edad:</label>
-                    <input type="text" id="edad" class="form-control" placeholder="Ej: 25">
-                </div>
+    <div class="container mt-4">
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+                <div class="card p-4 shadow-sm border-0" style="background-color: blanchedalmond;">
+                    <h5 class="text-center mb-3 text-dark">Registro de Cita</h5>
+                    
+                    <div class="mb-3">
+                        <label class="form-label small fw-bold">Nombre del Paciente:</label>
+                        <input type="text" id="nombre" class="form-control" placeholder="Nombre completo">
+                    </div>
 
-                <div class="mb-3">
-                    <label class="form-label fw-bold">Especialista:</label>
-                    <select id="medicoSelect" class="form-select">
-                        <option value="" disabled selected>-- Elija un médico --</option>
-                        <option value="MED-001">Dr. Pérez - Medicina General</option>
-                        <option value="ODO-002">Dra. Ruiz - Odontología</option>
-                        <option value="INT-003">Dr. Torres - Internista</option>
-                        <option value="GIN-004">Dra. Gómez - Ginecología</option>
-                    </select>
-                </div>
+                    <div class="mb-3">
+                        <label class="form-label small fw-bold">Edad:</label>
+                        <input type="text" id="edad" class="form-control" placeholder="Ej: 25">
+                    </div>
 
-                <button onclick="registrar()" class="btn btn-primary w-100 fw-bold mt-2 shadow-sm">Guardar Cita</button>
+                    <div class="mb-3">
+                        <label class="form-label small fw-bold">Especialista:</label>
+                        <select id="medicoSelect" class="form-select">
+                            <option value="MED-001|Dr. Pérez|Medicina General|Ayuno de 8 horas">Dr. Pérez - Medicina General</option>
+                            <option value="ODO-002|Dra. Ruiz|Odontología|Higiene bucal previa">Dra. Ruiz - Odontología</option>
+                            <option value="INT-003|Dr. Torres|Médico Internista|Traer historia clínica">Dr. Torres - Internista</option>
+                            <option value="GIN-004|Dra. Gómez|Ginecología|Ropa cómoda y ligera">Dra. Gómez - Ginecología</option>
+                        </select>
+                    </div>
+
+                    <button onclick="registrar()" class="btn btn-primary w-100 fw-bold shadow">Guardar Cita</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-5 mb-5">
+            <h4 class="text-center mb-3">Historial de Registros</h4>
+            <div class="table-responsive bg-white p-3 rounded shadow-sm">
+                <table class="table table-hover align-middle">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>Médico / Especialidad</th>
+                            <th>Paciente</th>
+                            <th>Edad</th>
+                            <th>Fecha</th>
+                            <th>Recomendación</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cuerpoTabla"></tbody>
+                </table>
             </div>
         </div>
     </div>
 
-    <div class="mt-5">
-        <h3 class="text-center mb-3">Historial de Registros</h3>
-        <div class="table-responsive bg-white p-3 rounded shadow-sm">
-            <table class="table table-hover align-middle">
-                <thead class="table-dark">
-                    <tr>
-                        <th>ID</th>
-                        <th>Médico / Especialidad</th>
-                        <th>Paciente</th>
-                        <th>Edad</th>
-                        <th>Fecha Registro</th>
-                        <th>Recomendación</th>
-                    </tr>
-                </thead>
-                <tbody id="cuerpoTabla"></tbody>
-            </table>
-        </div>
-    </div>
-</div>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

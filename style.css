@@ -1,23 +1,18 @@
-/* Toques finales */
-body {
-    min-height: 100vh;
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
 
-h1 {
+.bg-primary {
+    background-color: #0d6efd;
+}
+
+header h1 {
+    font-size: 1.8rem; 
     letter-spacing: 1px;
 }
 
-/* Efecto al pasar el mouse por la tarjeta */
-.card {
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-}
-
-/* Estilo para el ID del médico dentro de la tabla */
-.id-badge {
-    font-size: 0.75rem;
-    padding: 5px 8px;
+.container {
+    margin-top: 30px;
 }

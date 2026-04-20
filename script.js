@@ -1,44 +1,29 @@
-const medicos = {
-    "MED-001": { nombre: "Dr. Pérez", esp: "Medicina General", rec: "Ayuno de 8 horas." },
-    "ODO-002": { nombre: "Dra. Ruiz", esp: "Odontología", rec: "Higiene bucal previa." },
-    "INT-003": { nombre: "Dr. Torres", esp: "Internista", rec: "Traer historia clínica." },
-    "GIN-004": { nombre: "Dra. Gómez", esp: "Ginecología", rec: "Ropa cómoda." }
-};
-
 function registrar() {
-    let nombreP = document.getElementById('nombre').value;
-    let edadP = document.getElementById('edad').value;
-    let idMed = document.getElementById('medicoSelect').value;
+    const paciente = document.getElementById('nombre').value;
+    const edad = document.getElementById('edad').value;
+    const seleccion = document.getElementById('medicoSelect').value;
 
-    if (!nombreP || !edadP || !idMed) {
-        alert("Completa todos los campos.");
-        return;
-    }
+    const datos = seleccion.split('|');
+    const id = datos[0];
+    const nombreMedico = datos[1];
+    const especialidad = datos[2];
+    const recomendacion = datos[3];
 
-    if (isNaN(edadP)) {
-        alert("La edad debe ser un número.");
-        return;
-    }
+    const fechaActual = new Date().toLocaleString();
 
-    let ahora = new Date();
-    let fechaTxt = ahora.toLocaleDateString() + " " + ahora.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
-    let medicoInfo = medicos[idMed];
+    const tabla = document.getElementById('cuerpoTabla');
+    const fila = tabla.insertRow();
 
-    let tabla = document.getElementById('cuerpoTabla');
-    let fila = tabla.insertRow();
-
-    // Aquí usamos clases de Bootstrap como 'badge' y 'text-muted'
     fila.innerHTML = `
-        <td><span class="badge bg-secondary id-badge">${idMed}</span></td>
-        <td><strong>${medicoInfo.nombre}</strong><br><small class="text-muted">${medicoInfo.esp}</small></td>
-        <td>${nombreP}</td>
-        <td>${edadP} años</td>
-        <td><small>${fechaTxt}</small></td>
-        <td><span class="text-success small"><em>${medicoInfo.rec}</em></span></td>
+        <td><span class="badge bg-secondary">${id}</span></td>
+        <td><strong>${nombreMedico}</strong><br><small class="text-muted">${especialidad}</small></td>
+        <td>${paciente}</td>
+        <td>${edad} años</td>
+        <td><small>${fechaActual}</small></td>
+        <td class="text-success small"><em>${recomendacion}</em></td>
     `;
 
-    // Limpiar formulario
+    // 5. Limpiar campos de texto después de guardar
     document.getElementById('nombre').value = "";
     document.getElementById('edad').value = "";
-    document.getElementById('medicoSelect').value = "";
 }
